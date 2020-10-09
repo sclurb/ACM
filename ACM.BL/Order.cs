@@ -27,16 +27,5 @@ namespace ACM.BL
             if (OrderDate == null) isValid = false;
             return isValid;
         }
-
-        public Order Retrieve()
-        {
-            var order = new Order();
-            return order;
-        }
-
-        public bool Save()
-        {
-            return true;
-        }
     }
 }

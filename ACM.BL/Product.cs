@@ -29,15 +29,5 @@ namespace ACM.BL
             if (CurrentPrice == null) isValid = false;
             return isValid;
         }
-
-        public Product Retrieve(int productId)
-        {
-            var product = new Product();
-            return product;
-        }
-        public bool Save()
-        {
-            return true;
-        }
     }
 }
