@@ -8,14 +8,18 @@ namespace ACM.BL
 {
     public class Customer
     {
-        public Customer()
+        public Customer() : this(0)
         {
-
+            AddressList = new List<Address>();
         }
         public Customer(int customerId)
         {
             CustomerId = customerId;
         }
+        public List<Address> AddressList { get; set; }
+        public Address WorkAddress { get; set; }
+        public Address HomeAddress { get; set; }
+        public int CustomerType { get; set; }
         public int CustomerId { get; private set; }
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
