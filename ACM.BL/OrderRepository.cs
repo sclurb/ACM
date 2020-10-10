@@ -17,9 +17,28 @@ namespace ACM.BL
             };
             return order;
         }
-        public bool Save()
+        public bool Save(Order order)
         {
-            return true;
+            var success = true;
+            if (order.HasChanges)
+            {
+                if (order.IsValid)
+                {
+                    if (order.IsNew)
+                    {
+                        // Call an insert stored procedure
+                    }
+                    else
+                    {
+                        // Call an update stored procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
     }
 }

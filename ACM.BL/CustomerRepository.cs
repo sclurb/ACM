@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class CustomerRepository
+    public class CustomerRepository 
     {
         private AddressRepository addressRepository { get; set; }
         public CustomerRepository()
@@ -27,7 +27,26 @@ namespace ACM.BL
         }
         public bool Save(Customer customer)
         {
-            return true;
+            var success = true;
+            if (customer.HasChanges)
+            {
+                if (customer.IsValid)
+                {
+                    if (customer.IsNew)
+                    {
+                        // Call an insert stored procedure
+                    }
+                    else
+                    {
+                        // Call an update stored procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
 
     }
