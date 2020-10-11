@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
         public Product()
         {
@@ -22,7 +22,7 @@ namespace ACM.BL
         public string ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; }
         public string _productName;
-        public string ProductName 
+        public string ProductName
         {
             get
             {
@@ -46,5 +46,7 @@ namespace ACM.BL
         }
 
         public override string ToString() => ProductName;
+
+        public string Log() => $"{ProductId}: {ProductName} Detail: {ProductDescription} Status: {EntityState.ToString()}";
     }
 }
